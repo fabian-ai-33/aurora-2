@@ -160,31 +160,6 @@ export function MonthlyView({ habits = [], toggleHabitCompletion, onDeleteHabit,
     .map(Number)
     .sort((a, b) => a - b)
 
-  // Check if there are no habits
-  if (habits.length === 0) {
-    return (
-      <Card>
-        <CardHeader className="flex flex-row items-center justify-between pb-2">
-          <CardTitle>Monthly View</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="flex items-center justify-between mb-4">
-            <Button variant="outline" size="icon" onClick={previousMonth}>
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            <h2 className="text-xl font-bold">{format(currentDate, "MMMM yyyy")}</h2>
-            <Button variant="outline" size="icon" onClick={nextMonth}>
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          </div>
-          <div className="py-8 text-center text-muted-foreground">
-            No habits to display. Add a habit to get started.
-          </div>
-        </CardContent>
-      </Card>
-    )
-  }
-
   return (
     <Card>
       <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
@@ -204,9 +179,6 @@ export function MonthlyView({ habits = [], toggleHabitCompletion, onDeleteHabit,
         </AlertDialogContent>
       </AlertDialog>
 
-      <CardHeader className="flex flex-row items-center justify-between pb-2">
-        <CardTitle>Monthly View</CardTitle>
-      </CardHeader>
       <CardContent>
         <div className="flex items-center justify-between mb-4">
           <Button variant="outline" size="icon" onClick={previousMonth}>
