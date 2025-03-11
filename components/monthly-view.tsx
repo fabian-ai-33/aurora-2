@@ -127,7 +127,6 @@ export function MonthlyView({ habits = [], toggleHabitCompletion, onDeleteHabit,
   }
 
   const getStatusClass = (habit: Habit, date: Date) => {
-    const dateStr = formatDateString(date)
     const status = getHabitStatus(habit, date)
 
     if (isDateCompleted(habit, date)) {

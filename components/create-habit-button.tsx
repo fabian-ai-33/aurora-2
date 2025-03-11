@@ -39,7 +39,7 @@ const formSchema = z.object({
     }),
 })
 
-export function CreateHabitButton({ onAddHabit, habits }: CreateHabitButtonProps) {
+export function CreateHabitButton({ onAddHabit }: CreateHabitButtonProps) {
     const [showHabitDialog, setShowHabitDialog] = useState(false)
     const [color, setColor] = useState("green")
 
