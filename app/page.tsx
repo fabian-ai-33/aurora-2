@@ -16,8 +16,6 @@ export default function HabitTracker() {
     return []
   })
 
-  const [selectedHabit, setSelectedHabit] = useState<Habit | null>(null)
-
   // Save habits to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("habits", JSON.stringify(habits))
@@ -33,9 +31,6 @@ export default function HabitTracker() {
 
   const deleteHabit = (id: string) => {
     setHabits(habits.filter((habit) => habit.id !== id))
-    if (selectedHabit?.id === id) {
-      setSelectedHabit(null)
-    }
   }
 
   const toggleHabitCompletion = (habitId: string, date: string) => {
